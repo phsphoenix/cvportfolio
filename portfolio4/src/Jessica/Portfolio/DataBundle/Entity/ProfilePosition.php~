@@ -1,0 +1,89 @@
+<?php
+/**
+ * Created by IntelliJ IDEA.
+ * User: dracarys
+ * Date: 2016-04-14
+ * Time: 11:32
+ */
+
+namespace Jessica\Portfolio\DataBundle\Entity;
+
+use Gedmo\Mapping\Annotation as Gedmo;
+use Doctrine\ORM\Mapping as ORM;
+use Jessica\Portfolio\UserBundle\Entity\PortfolioUser;
+
+/**
+ * Class ProfilePosition
+ * @package Jessica\Portfolio\DataBundle\Entity
+ *
+ * @ORM\Entity
+ * @ORM\Table(name="profile_positions")
+ */
+class ProfilePosition
+{
+    /**
+     * @var
+     *
+     * @ORM\Id()
+     * @ORM\GeneratedValue()
+     * @ORM\Column(type="integer")
+     */
+    private $id;
+
+    /**
+     * @var
+     *
+     * @ORM\ManyToOne(targetEntity="PortfolioProfile")
+     * @ORM\JoinColumn(referencedColumnName="id")
+     */
+    private $profile;
+
+    /**
+     * @var
+     *
+     * @ORM\ManyToOne(targetEntity="PositionEntry")
+     * @ORM\JoinColumn(referencedColumnName="id")
+     */
+    private $positionEntry;
+
+    /**
+     * @var
+     *
+     * @ORM\Column(type="integer")
+     */
+    private $displayOrder;
+
+    /**
+     * @var
+     *
+     * @Gedmo\Timestampable(on="create")
+     * @ORM\Column(type="datetime")
+     */
+    private $created;
+
+    /**
+     * @var
+     *
+     * @Gedmo\Timestampable(on="update")
+     * @ORM\Column(type="datetime")
+     */
+    private $modified;
+
+    /**
+     * @var
+     *
+     * @Gedmo\Blameable(on="create")
+     * @ORM\ManyToOne(targetEntity="Jessica\Portfolio\UserBundle\Entity\PortfolioUser")
+     * @ORM\JoinColumn(name="created_by", referencedColumnName="id")
+     */
+    private $createdBy;
+
+    /**
+     * @var
+     *
+     * @Gedmo\Blameable(on="update")
+     * @ORM\ManyToOne(targetEntity="Jessica\Portfolio\UserBundle\Entity\PortfolioUser")
+     * @ORM\JoinColumn(name="modified_by", referencedColumnName="id")
+     */
+    private $modifiedBy;
+}

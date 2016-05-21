@@ -1,0 +1,3 @@
+#jessica_portfolio_user_homepage:
+#    path:     /
+#    defaults: { _controller: JessicaPortfolioUserBundle:Default:index }

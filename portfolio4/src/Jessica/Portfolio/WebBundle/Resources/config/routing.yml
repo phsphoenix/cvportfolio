@@ -1,0 +1,7 @@
+web_home:
+    path:     /
+    defaults: { _controller: JessicaPortfolioWebBundle:Home:index }
+
+profiles:
+    path: /portfolio/{username}/{url}/{section}
+    defaults: { _controller: JessicaPortfolioWebBundle:PortfolioProfile:index, username: null, url: public, section: null }

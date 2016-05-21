@@ -1,0 +1,174 @@
+easy_admin:
+    site_name: 'Portfolio EasyAdmin'
+    design:
+        color_scheme: 'light'
+    list:
+        actions:
+            - { name: 'new', label: 'New' }
+    entities:
+        Organization:
+            class: Jessica\Portfolio\DataBundle\Entity\Organization
+            title: 'Organization'
+            list:
+                title: 'Organizations'
+                fields: ['id','type','name','founded','website','created','modified','createdBy','modifiedBy']
+            form:
+                fields:
+                    - { property: 'type' }
+                    - { property: 'user' }
+                    - { property: 'size' }
+                    - { property: 'name' }
+                    - { property: 'founded', type: 'date', type_options: { widget: 'single_text' } }
+                    - { property: 'address' }
+                    - { property: 'phone' }
+                    - { property: 'mobile' }
+                    - { property: 'email' }
+                    - { property: 'website', type: 'text' }
+                    - { property: 'facebook', type: 'text' }
+                    - { property: 'twitter', type: 'text' }
+                    - { property: 'linkedIn', type: 'text' }
+                    - { property: 'description', type: 'text' }
+                    - { property: 'presentation', type: 'ckeditor' }
+        OrganizationType:
+            class: Jessica\Portfolio\DataBundle\Entity\OrganizationType
+            title: 'Organization Type'
+            list:
+                title: 'Organization Types'
+                fields: ['id','name','description','comments','created','modified','createdBy','modifiedBy']
+            form:
+                fields: ['name','description','comments']
+        OrganizationSize:
+            class: Jessica\Portfolio\DataBundle\Entity\OrganizationSize
+            title: 'Organization Size'
+            list:
+                title: 'Organization Sizes'
+                fields: ['id','name','description','comments','created','modified','createdBy','modifiedBy']
+            form:
+                fields: ['name','description','comments']
+        PositionEntry:
+            class: Jessica\Portfolio\DataBundle\Entity\PositionEntry
+            title: 'Position Entry'
+            list:
+                title: 'Position Entries'
+                fields: ['id','user','type','organization','startDate','endDate','title','description','comments','created','modified','createdBy','modifiedBy']
+            form:
+                title: 'Create Position Entry'
+                fields:
+                    - { property: 'user' }
+                    - { property: 'type' }
+                    - { property: 'organization' }
+                    - { property: 'startDate', type: 'date', type_options: { widget: 'single_text' } }
+                    - { property: 'endDate', type: 'date', type_options: { widget: 'single_text' } }
+                    - { property: 'title', type: 'text' }
+                    - { property: 'description', type: 'ckeditor' }
+                    - { property: 'comments', type: 'text' }
+        PositionType:
+            class: Jessica\Portfolio\DataBundle\Entity\PositionType
+            title: 'Position Type'
+            list:
+                title: 'Position Types'
+                fields: ['id','name','comments','created','modified','createdBy','modifiedBy']
+            form:
+                fields: ['name','description','comments']
+        PersonalStatement:
+            class: Jessica\Portfolio\DataBundle\Entity\PersonalStatement
+            title: 'Personal Statement'
+            list:
+                title: 'Personal Statements'
+                fields: ['id','user','name','description','contents','comments','created','modified','createdBy','modifiedBy']
+            form:
+                fields:
+                    - { property: 'user' }
+                    - { property: 'name' }
+                    - { property: 'description', type: 'text' }
+                    - { property: 'contents', type: 'ckeditor' }
+                    - { property: 'comments' }
+        PortfolioProfile:
+            class: Jessica\Portfolio\DataBundle\Entity\PortfolioProfile
+            title: 'Portfolio Profile'
+            list:
+                title: 'Portfolio Profiles'
+                fields: ['id','user','type','name','url','description','comments','created','modified','createdBy','modifiedBy']
+            form:
+                fields:
+                    - { property: 'user' }
+                    - { property: 'type' }
+                    - { property: 'name' }
+                    - { property: 'url' }
+                    - { property: 'description', type: 'text' }
+                    - { property: 'comments' }
+        PortfolioProfileType:
+            class: Jessica\Portfolio\DataBundle\Entity\PortfolioProfileType
+            title: 'Portfolio Profile Type'
+            list:
+                title: 'Portfolio Profile Types'
+                fields: ['id','name','description','comments','created','modified','createdBy','modifiedBy']
+            form:
+                fields:
+                    - { property: 'name' }
+                    - { property: 'description', type: 'text' }
+                    - { property: 'comments' }
+        PortfolioSection:
+            class: Jessica\Portfolio\DataBundle\Entity\PortfolioSection
+            title: 'Portfolio Section'
+            list:
+                title: 'Portfolio Sections'
+                fields: ['id','name','description','comments','created','modified','createdBy','modifiedBy']
+            form:
+                fields: ['name','description','comments']
+        PortfolioProfileSection:
+            class: Jessica\Portfolio\DataBundle\Entity\PortfolioProfileSection
+            title: 'Portfolio Profile Section'
+            list:
+                title: 'Portfolio Profile Sections'
+                fields: ['id','profile','section','displayOrder','created','modified','createdBy','modifiedBy']
+            form:
+                fields: ['profile','section','displayOrder','comments']
+        ProfilePositionEntry:
+            class: Jessica\Portfolio\DataBundle\Entity\ProfilePositionEntry
+            title: 'Portfolio Position Entry'
+            list:
+                title: 'Portfolio Position Entries'
+                fields: ['id','profile','positionEntry','comments','displayOrder','created','modified','createdBy','modifiedBy']
+            form:
+                fields: ['profile','positionEntry','comments','displayOrder']
+        ProfilePersonalStatement:
+            class: Jessica\Portfolio\DataBundle\Entity\ProfilePersonalStatement
+            title: 'Portfolio Personal Statement'
+            list:
+                title: 'Portfolio Personal Statements'
+                fields: ['id','profile','personalStatement','comments','created','modified','createdBy','modifiedBy']
+            form:
+                fields: ['profile','personalStatement','comments']
+        PersonalContactInformation:
+            class: Jessica\Portfolio\DataBundle\Entity\PersonalContactInformation
+            title: 'Personal Contact Information'
+            list:
+                title: 'Personal Contact Information'
+                fields: ['id','user','firstName','middleName','lastName','city','country','phone','mobile','email','linkedIn','comments','created','modified','createdBy','modifiedBy']
+            form:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'user' }
+                    - { property: 'firstName' }
+                    - { property: 'middleName' }
+                    - { property: 'lastName' }
+                    - { property: 'address1' }
+                    - { property: 'address2' }
+                    - { property: 'address3' }
+                    - { property: 'zip' }
+                    - { property: 'city' }
+                    - { property: 'state' }
+                    - { property: 'country' }
+                    - { property: 'phone' }
+                    - { property: 'mobile' }
+                    - { property: 'email' }
+                    - { property: 'facebook' }
+                    - { property: 'twitter' }
+                    - { property: 'linkedIn' }
+                    - { property: 'bitbucket' }
+                    - { property: 'github' }
+                    - { property: 'comments' }
+
+
+

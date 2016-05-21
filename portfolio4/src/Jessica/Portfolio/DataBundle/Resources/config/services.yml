@@ -1,0 +1,4 @@
+services:
+#    jessica_portfolio_data.example:
+#        class: Jessica\Portfolio\DataBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

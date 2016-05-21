@@ -1,0 +1,22 @@
+{% extends 'JessicaPortfolioWebBundle:PortfolioProfile:profile.html.twig' %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            {% for position in positions %}
+                <div class="row">
+                    <div class="col-xs-6"><h4>{{ position.title }} at {{ position.organization.name }}</h4></div>
+                    <div class="col-xs-3"><h4>{{ position.type.name }}</h4></div>
+                    <div class="col-xs-3"><h4>{{ position.startDate | date('Y-m-d') }} to {{ position.endDate | date('Y-m-d') }}</h4></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        {{ position.description | raw }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{
+  "name": "portfolio4",
+  "version": "1.0.0",
+  "description": "Personal Portfolio Symfony Project",
+  "main": "web/",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/kungfupanda3/jessica.git"
+  },
+  "keywords": [
+    "portfolio"
+  ],
+  "author": "James Huang <pdt.james.huang@gmail.com>",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/kungfupanda3/jessica#readme"
+}

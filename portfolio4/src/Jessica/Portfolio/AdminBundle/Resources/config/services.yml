@@ -1,0 +1,4 @@
+services:
+#    jessica_portfolio_admin.example:
+#        class: Jessica\Portfolio\AdminBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]
